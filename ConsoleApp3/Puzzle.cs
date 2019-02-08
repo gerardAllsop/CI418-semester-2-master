@@ -69,5 +69,10 @@ namespace FoxGooseCorn
             boat.crossTheRiver();
             cast.updatePosition("farmer");
         }
+
+        public Boolean safetyCheck()
+        {
+            return cast.everyoneSafe();
+        }
     }
 }

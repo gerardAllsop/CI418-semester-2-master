@@ -19,19 +19,21 @@ namespace FoxGooseCorn
             {
             }
         }
-
         public Actor(string name)
         {
             Name = name;
             bank = Bank.LEFT;
         }
-
-        public String getPosition()
+        public String reportPosition()
         {
             if (bank == Bank.LEFT) 
                 return "The "+ Name +" is on the left bank\n";
             else
                 return "The " + Name + " is on the right bank\n";
+        }
+        public Bank getPosition()
+        {
+            return bank;
         }
 
         public void changeBank()

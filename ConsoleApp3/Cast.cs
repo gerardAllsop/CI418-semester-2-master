@@ -13,7 +13,7 @@ namespace FoxGooseCorn
         public string getAllPositions()
         {
             StringBuilder sb = new StringBuilder();
-            cast.ForEach(role => sb.Append(role.getPosition()));
+            cast.ForEach(role => sb.Append(role.reportPosition()));
             return sb.ToString();
         }
         public string getCast()
@@ -22,7 +22,6 @@ namespace FoxGooseCorn
             cast.ForEach(role => sb.Append(role.Name + " "));
             return sb.ToString();
         }
-
         public Boolean isValidCastMember(string name)
         {
             foreach(var role in cast)
@@ -34,19 +33,17 @@ namespace FoxGooseCorn
             }
             return false;
         }
-
         public string getCastMemberPosition(string name)
         {
             foreach (var role in cast)
             {
                 if (role.Name.Equals(name))
                 {
-                    return role.getPosition();
+                    return role.reportPosition();
                 }
             }
             return string .Format("Don't know where {0} is",name);
         }
-
         public Actor getCastMember(string name)
         {
             foreach (var role in cast)
@@ -58,7 +55,6 @@ namespace FoxGooseCorn
             }
             return null;
         }
-
         public void updatePosition(string name)
         {
             foreach (var role in cast)
@@ -72,6 +68,19 @@ namespace FoxGooseCorn
         private void swapBank(Actor actor)
         {
             actor.changeBank();
+        }
+        public Boolean everyoneSafe()
+        {
+            Bank farmer = getCastMember("farmer").getPosition();
+            Bank fox = getCastMember("fox").getPosition();
+            Bank goose = getCastMember("goose").getPosition();
+            Bank corn = getCastMember("corn").getPosition();
+            if (fox == goose && farmer != goose)
+                return false;
+            else if (goose == corn && farmer != corn)
+                return false;
+            else
+                return true;
         }
     }
 }

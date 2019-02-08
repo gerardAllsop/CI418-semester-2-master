@@ -14,6 +14,7 @@ namespace FoxGooseCorn
             //we'll create a Puzzle class object
             Puzzle puzzle = new Puzzle();
             string userResponse = "";
+            string exitMessage = "Have a nice day!";
             bool repeat = true;
 
             //print out the intro txt
@@ -54,7 +55,14 @@ namespace FoxGooseCorn
                         Console.WriteLine("Please enter a menu choice from 1..4");
                         break;
                 }
+                if (!puzzle.safetyCheck())
+                {
+                    exitMessage = "We have a problem Houston!";
+                    repeat = false;
+                }
             }
+            Console.Write(exitMessage);
+            Console.ReadKey();
         }
     }
 }
