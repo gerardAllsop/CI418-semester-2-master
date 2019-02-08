@@ -48,5 +48,10 @@ namespace FoxGooseCorn
         {
             occupant = actor;
         }
+
+        public String reportOnPosition()
+        {
+            return $"The boat is on the {side} bank";
+        }
     }
 }

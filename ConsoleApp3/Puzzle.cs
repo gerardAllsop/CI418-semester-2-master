@@ -26,6 +26,7 @@ namespace FoxGooseCorn
         public void printAllPlayerPositions()
         {
             WriteLine(cast.getAllPositions());
+            WriteLine(boat.reportOnPosition());
         }
 
         public void printIntro()
