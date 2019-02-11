@@ -8,8 +8,19 @@ namespace FoxGooseCorn
 {
     class Cast
     {
-        private List<Actor> cast = new List<Actor> {new Actor("farmer"), new Actor("fox"),
-                                                    new Actor("goose"), new Actor("corn")};
+        private List<Actor> cast = new List<Actor> {
+            new Actor("farmer"), new Actor("fox"),
+            new Actor("goose"), new Actor("corn")
+        };
+
+        internal Actor Actor
+        {
+            get => default(Actor);
+            set
+            {
+            }
+        }
+
         public string getAllPositions()
         {
             StringBuilder sb = new StringBuilder();
@@ -69,12 +80,14 @@ namespace FoxGooseCorn
         {
             actor.changeBank();
         }
+
         public Boolean everyoneSafe()
         {
-            Bank farmer = getCastMember("farmer").getPosition();
-            Bank fox = getCastMember("fox").getPosition();
-            Bank goose = getCastMember("goose").getPosition();
-            Bank corn = getCastMember("corn").getPosition();
+            Bank farmer = getCastMember("farmer").bank;
+            Bank fox = getCastMember("fox").bank;
+            Bank goose = getCastMember("goose").bank;
+            Bank corn = getCastMember("corn").bank;
+
             if (fox == goose && farmer != goose)
                 return false;
             else if (goose == corn && farmer != corn)

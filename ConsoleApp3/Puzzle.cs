@@ -23,6 +23,14 @@ namespace FoxGooseCorn
             help = new Help();          
         }
 
+        internal Cast Cast
+        {
+            get => default(Cast);
+            set
+            {
+            }
+        }
+
         public void printAllPlayerPositions()
         {
             WriteLine(cast.getAllPositions());

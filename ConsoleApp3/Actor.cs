@@ -9,16 +9,8 @@ namespace FoxGooseCorn
     class Actor
     {
         //can hold one of two values - true or false
-        private Bank bank;
+        public Bank bank { get; set; }
         public string Name { get; private set; }
-
-        internal Cast Cast
-        {
-            get => default(Cast);
-            set
-            {
-            }
-        }
         public Actor(string name)
         {
             Name = name;
@@ -31,10 +23,8 @@ namespace FoxGooseCorn
             else
                 return "The " + Name + " is on the right bank\n";
         }
-        public Bank getPosition()
-        {
-            return bank;
-        }
+
+       
 
         public void changeBank()
         {

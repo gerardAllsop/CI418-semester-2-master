@@ -1,19 +1,16 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ClassDiagram MajorVersion="1" MinorVersion="1">
   <Class Name="FoxGooseCorn.Actor" Collapsed="true">
-    <Position X="9.75" Y="1.75" Width="1.5" />
+    <Position X="9.25" Y="1.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAIEEAAAAAAAAAAAAAAAQBAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAEAAgAAAAAAAAAAAAQBAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Actor.cs</FileName>
     </TypeIdentifier>
-    <ShowAsAssociation>
-      <Property Name="Cast" />
-    </ShowAsAssociation>
   </Class>
   <Class Name="FoxGooseCorn.Boat" Collapsed="true">
     <Position X="7" Y="4" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AQAAAAAAAAAAAAAAAIAAAAAAAEAAAAAKAAAAAAAABAA=</HashCode>
+      <HashCode>AQAAAAAAAAAAAAAAAIAAAAEAAEAAAAAKAAAAAAAABAA=</HashCode>
       <FileName>Boat.cs</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>
@@ -23,9 +20,12 @@
   <Class Name="FoxGooseCorn.Cast" Collapsed="true">
     <Position X="9.25" Y="3" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAABAAAAAABAAAAAQAAAAQAAAAAAADQAAAAAAAAAAgA=</HashCode>
+      <HashCode>AAABAAAAAABAgAAAQAAAAQAAAAAAADQAAABAAAAAAgA=</HashCode>
       <FileName>Cast.cs</FileName>
     </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Actor" />
+    </ShowAsAssociation>
   </Class>
   <Class Name="FoxGooseCorn.Help" Collapsed="true">
     <Position X="4.75" Y="3" Width="1.5" />
@@ -47,16 +47,22 @@
   <Class Name="FoxGooseCorn.Program" Collapsed="true">
     <Position X="7" Y="1.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAA=</HashCode>
+      <HashCode>AAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAA=</HashCode>
       <FileName>Program.cs</FileName>
     </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Puzzle" />
+    </ShowAsAssociation>
   </Class>
   <Class Name="FoxGooseCorn.Puzzle" Collapsed="true">
     <Position X="7" Y="3" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAQACghAABAAAAAAIAAACAAAAAAAAAAAAAAAAAABAA=</HashCode>
+      <HashCode>AAAQAGghAABAAAAAAIAAACAABAAAAAAAAAAAAAAABAA=</HashCode>
       <FileName>Puzzle.cs</FileName>
     </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Cast" />
+    </ShowAsAssociation>
   </Class>
   <Enum Name="FoxGooseCorn.Bank" Collapsed="true">
     <Position X="7" Y="5" Width="1.5" />
