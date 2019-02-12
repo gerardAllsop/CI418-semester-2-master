@@ -29,9 +29,9 @@ namespace quiz_GUI
             help = new Help();
         }
 
-        private void Btn_select_Click(object sender, RoutedEventArgs e)
+        private void printIntro(object sender, RoutedEventArgs e)
         {
-            txt_quizDetail.Text = help.getIntroTxt();
+           txt_intro.Text =  help.getIntroTxt();   
         }
     }
 }
