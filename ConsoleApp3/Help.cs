@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace FoxGooseCorn
 {
-    class Help
+    public class Help
     {
         string introTxt = "A farmer with a fox, a goose, and a sack of corn needs to cross a river.\n" +
                          "The farmer has a rowboat, but there is room for only the farmer and one\n " +

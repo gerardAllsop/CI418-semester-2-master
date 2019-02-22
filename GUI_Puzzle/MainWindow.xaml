@@ -1,0 +1,13 @@
+﻿<Window x:Class="GUI_Puzzle.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:GUI_Puzzle"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid Margin="0,0,0,-4">
+        <TextBlock x:Name="txtb_into" HorizontalAlignment="Left" Margin="57,39,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="255" Width="691" FontSize="18" TextAlignment="Center"/>
+        <Button x:Name="btn_intro" Content="Intro" HorizontalAlignment="Left" Margin="57,320,0,0" VerticalAlignment="Top" Width="127" Height="42" Click="btn_intro_Click"/>
+    </Grid>
+</Window>
