@@ -7,7 +7,11 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid Margin="0,0,0,-4">
-        <TextBlock x:Name="txtb_into" HorizontalAlignment="Left" Margin="57,39,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="255" Width="691" FontSize="18" TextAlignment="Center"/>
-        <Button x:Name="btn_intro" Content="Intro" HorizontalAlignment="Left" Margin="57,320,0,0" VerticalAlignment="Top" Width="127" Height="42" Click="btn_intro_Click"/>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="5*"/>
+            <ColumnDefinition Width="67*"/>
+        </Grid.ColumnDefinitions>
+        <TextBlock x:Name="txtb_into" HorizontalAlignment="Left" Margin="1.851,39,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="255" Width="691" FontSize="18" TextAlignment="Center" Grid.Column="1"/>
+        <Button x:Name="btn_intro" Content="Intro" HorizontalAlignment="Left" Margin="1.851,320,0,0" VerticalAlignment="Top" Width="127" Height="42" Click="btn_intro_Click" Grid.Column="1"/>
     </Grid>
 </Window>
