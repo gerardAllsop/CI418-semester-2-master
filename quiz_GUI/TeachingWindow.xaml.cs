@@ -19,9 +19,21 @@ namespace quiz_GUI
     /// </summary>
     public partial class TeachingWindow : Window
     {
-        public TeachingWindow()
-        {
+        About about;
+        public TeachingWindow(){
             InitializeComponent();
+        }
+        private void Intro_View_Click(object sender, RoutedEventArgs e){}
+        private void Display_Actors_Click(object sender, RoutedEventArgs e){}
+        private void Find_Actor_Click(object sender, RoutedEventArgs e){}
+        private void Load_Boat_Click(object sender, RoutedEventArgs e){}
+        private void River_Crossing_Click(object sender, RoutedEventArgs e){}
+        private void About_Detail_Click(object sender, RoutedEventArgs e){
+            about = new About();
+            about.ShowDialog();
+        }
+        private void Quit_Click(object sender, RoutedEventArgs e){
+            this.Close();
         }
     }
 }

@@ -8,15 +8,19 @@
         Title="TeachingWindow" Height="450" Width="800">
     <DockPanel>
         <Menu DockPanel.Dock="Top">
-             <MenuItem Header="_Puzzle Options">
-                <MenuItem Header="_View Intro" />
-                <MenuItem Header="_Where is everyone" />
-                <MenuItem Header="_Find someone" />
-                <MenuItem Header="_Put someone in the boat" />
-                <MenuItem Header="_Cross the river" />
+            <MenuItem Header="_Puzzle Options">
+                <MenuItem Header="_View Intro" Click="Intro_View_Click"/>
+                <MenuItem Header="_Where is everyone" Click="Display_Actors_Click"/>
+                <MenuItem Header="_Find someone" Click="Find_Actor_Click"/>
+                <MenuItem Header="_Put someone in the boat" Click="Load_Boat_Click"/>
+                <MenuItem Header="_Cross the river" Click="River_Crossing_Click"/>
+                <MenuItem Header="_About" Click="About_Detail_Click"/>
                 <Separator />
-                <MenuItem Header="_Quit" />
-             </MenuItem>
-       </Menu>
+                <MenuItem Header="_Quit" Click="Quit_Click"/>
+            </MenuItem>
+        </Menu>
+        <StackPanel >
+            <TextBlock Name="txtOutputBlock" Text="This is the output panel"/>
+        </StackPanel>
     </DockPanel>
 </Window>
