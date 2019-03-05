@@ -18,7 +18,7 @@ namespace FoxGooseCorn
             bool repeat = true;
 
             //print out the intro txt
-            puzzle.printIntro();
+            puzzle.getIntro();
             puzzle.printAllPlayerPositions();
             while (repeat)
             {

@@ -7,7 +7,7 @@ using static System.Console;
 
 namespace FoxGooseCorn
 {
-    class Puzzle
+    public class Puzzle
     {    
         Help help;
         Cast cast;
@@ -37,9 +37,22 @@ namespace FoxGooseCorn
             WriteLine(boat.reportOnPosition());
         }
 
+        public String getAllPlayerPositions()
+        {
+            StringBuilder output = new StringBuilder();
+            output.Append(cast.getAllPositions());
+            output.Append(boat.reportOnPosition());
+            return output.ToString();
+        }
+
         public void printIntro()
         {
             WriteLine(help.getIntroTxt());
+        }
+
+        public String getIntro()
+        {
+            return help.getIntroTxt();
         }
 
         public void printInstructions()
@@ -76,6 +89,13 @@ namespace FoxGooseCorn
         {
             boat.crossTheRiver();
             cast.updatePosition("farmer");
+        }
+
+        public String crossRiver()
+        {
+            boat.crossTheRiver();
+            cast.updatePosition("farmer");
+            return boat.reportOnPosition();
         }
 
         public Boolean safetyCheck()

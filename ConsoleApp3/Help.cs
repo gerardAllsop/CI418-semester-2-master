@@ -14,7 +14,7 @@ namespace FoxGooseCorn
                          "The fox cannot be left alone with the goose, or the fox will eat the goose. " +
                          "Likewise, the goose cannot be left alone with the sack of corn, or the goose. " +
                          "will eat the corn." +
-                         "\nHow does the farmer get everything across the river ?";
+                         "\n\nHow does the farmer get everything across the river ?\n\n";
         MenuItems menu;
 
         public Help()

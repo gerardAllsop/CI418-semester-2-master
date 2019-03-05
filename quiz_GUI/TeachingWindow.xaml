@@ -20,7 +20,21 @@
             </MenuItem>
         </Menu>
         <StackPanel >
-            <TextBlock Name="txtOutputBlock" Text="This is the output panel"/>
+            <ScrollViewer  HorizontalScrollBarVisibility="Auto" Height="128" RenderTransformOrigin="0.5,0.5" TextOptions.TextFormattingMode="Display">
+                <ScrollViewer.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform AngleX="-1.299"/>
+                        <RotateTransform/>
+                        <TranslateTransform X="-1.361"/>
+                    </TransformGroup>
+                </ScrollViewer.RenderTransform>
+                <TextBlock Name="txtOutputBlock" 
+                           Text="This is the output panel" 
+                           Width="342" Height="186" 
+                           TextWrapping="WrapWithOverflow" 
+                           FontFamily="Sylfaen" FontSize="14"/>
+            </ScrollViewer>
         </StackPanel>
     </DockPanel>
 </Window>

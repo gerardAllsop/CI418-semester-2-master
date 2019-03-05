@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace FoxGooseCorn
 {
-    enum Bank
+    public enum Bank
     {
         LEFT,
         RIGHT

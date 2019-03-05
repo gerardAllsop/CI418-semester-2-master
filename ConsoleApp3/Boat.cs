@@ -8,11 +8,11 @@ namespace FoxGooseCorn
 {
     class Boat
     {
-        Bank side;
+        Bank Side { get; set; }
         Actor occupant;
         public Boat()
         {
-            side = Bank.LEFT;
+            Side = Bank.LEFT;
         }
 
         internal Bank Bank
@@ -25,16 +25,16 @@ namespace FoxGooseCorn
 
         public Bank crossTheRiver()
         {
-            if(side == Bank.LEFT)
+            if(Side == Bank.LEFT)
             {
-                side = Bank.RIGHT;
+                Side = Bank.RIGHT;
             }
             else
             {
-                side = Bank.LEFT;
+                Side = Bank.LEFT;
             }
             updateBoatOccupantPosition();
-            return side;
+            return Side;
         }
         private void updateBoatOccupantPosition()
         {
@@ -51,7 +51,7 @@ namespace FoxGooseCorn
 
         public String reportOnPosition()
         {
-            return $"The boat is on the {side} bank";
+            return $"The boat is on the {Side} bank";
         }
     }
 }
