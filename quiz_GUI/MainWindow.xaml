@@ -14,8 +14,9 @@
                 <MenuItem Header="_Find someone" />
                 <MenuItem Header="_Put someone in the boat" />
                 <MenuItem Header="_Cross the river" />
+                <MenuItem Header="_About" Click="showAbout" />
                 <Separator />
-                <MenuItem Header="_Quit" />
+                <MenuItem Header="_Quit"  Click="quitProgramme"/>
             </MenuItem>
         </Menu>
         <TextBox AcceptsReturn="True" />

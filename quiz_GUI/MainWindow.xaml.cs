@@ -33,5 +33,18 @@ namespace quiz_GUI
         {
            txt_intro.Text =  help.getIntroTxt();   
         }
+
+
+        private void showAbout(object sender, RoutedEventArgs e)
+        {
+            About aboutWindow = new About();
+            aboutWindow.Show();
+        }
+
+        private void quitProgramme(object sender, RoutedEventArgs e)
+        {
+            this.Close();
+        }
+
     }
 }
