@@ -32,8 +32,8 @@
             </ComboBox>
         </Canvas>
         <Canvas Grid.Row="2" Background="Lavender">
-            <Button IsDefault="True" Width="50" Height="20" Canvas.Left="228" Click="acceptButton_Click" Canvas.Top="11">OK</Button>
-            <Button IsCancel="True"  Width="50" Height="20" Canvas.Left="83" Canvas.Top="11">Cancel</Button>
+        <Button IsDefault="True" Width="50" Height="20" Canvas.Left="228" Click="acceptButton_Click" Canvas.Top="11">OK</Button>
+        <Button IsCancel="True"  Width="50" Height="20" Canvas.Left="83" Canvas.Top="11">Cancel</Button>
         </Canvas>
     </Grid>
 </Window>

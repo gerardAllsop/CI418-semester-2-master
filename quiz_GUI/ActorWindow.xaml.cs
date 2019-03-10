@@ -20,13 +20,12 @@ namespace quiz_GUI
     public partial class ActorWindow : Window
     {
         public string occupantChosen{ get; set; }
-        public ActorWindow()
-        {
+
+        public ActorWindow(){
             InitializeComponent();
         }
 
-        public string getActor(string msg)
-        {
+        public string getActor(string msg){
             Instructions.Text = msg;
             if (this.ShowDialog() == true)
             {
@@ -40,15 +39,13 @@ namespace quiz_GUI
             return String.Empty;
         }
 
-        private void Actor_List_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
+        private void Actor_List_SelectionChanged(object sender, SelectionChangedEventArgs e){
             ComboBox cbx = (ComboBox)sender;
             if (cbx.SelectedValue != null)
                 occupantChosen = cbx.SelectionBoxItem.ToString();
         }
 
-        void acceptButton_Click(object sender, RoutedEventArgs e)
-        {
+        void acceptButton_Click(object sender, RoutedEventArgs e){
             // Accept the dialog and return the dialog result
             this.DialogResult = true;
         }
