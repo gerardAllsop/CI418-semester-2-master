@@ -22,31 +22,19 @@ namespace FoxGooseCorn
             //instance of help
             help = new Help();          
         }
-
-        internal Cast Cast
-        {
-            get => default(Cast);
-            set
-            {
-            }
-        }
-
         public void printAllPlayerPositions()
         {
             WriteLine(cast.getAllPositions());
             WriteLine(boat.reportOnPosition());
         }
-
         public void printIntro()
         {
             WriteLine(help.getIntroTxt());
         }
-
         public void printInstructions()
         {
             WriteLine(help.getMenuText());
         }
-
         public void whereIsPlayer(String player)
         {
             if (cast.isValidCastMember(player))
@@ -54,7 +42,6 @@ namespace FoxGooseCorn
                 WriteLine(cast.getCastMemberPosition(player));
             }
         }
-
         public void putInBoat(string player)
         {
             if (cast.isValidCastMember(player))
@@ -71,13 +58,11 @@ namespace FoxGooseCorn
                 }
             }
         }
-
         public void nextTurn()
         {
             boat.crossTheRiver();
             cast.updatePosition("farmer");
         }
-
         public Boolean safetyCheck()
         {
             return cast.everyoneSafe();
