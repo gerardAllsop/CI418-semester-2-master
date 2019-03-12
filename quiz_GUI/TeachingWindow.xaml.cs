@@ -34,7 +34,8 @@ namespace quiz_GUI
         }
         private void Find_Actor_Click(object sender, RoutedEventArgs e){
             ActorWindow actors = new ActorWindow();
-            txtOutputBlock.Text = actors.getActor("Who do you want to find?");
+            string tmpActor = actors.getActor("Who do you want to find?");
+            txtOutputBlock.Text = puzzle.getPlayerPosition(tmpActor);
         }
         private void Load_Boat_Click(object sender, RoutedEventArgs e){
             ActorWindow actors = new ActorWindow();

@@ -12,9 +12,7 @@ namespace FoxGooseCorn
         Help help;
         Cast cast;
         Boat boat;
-
-        public Puzzle()
-        {
+        public Puzzle(){
             //actors in the puzzle
             cast = new Cast();
             //a boat
@@ -22,13 +20,13 @@ namespace FoxGooseCorn
             //instance of help
             help = new Help();          
         }
+        public void printIntro(){
+            WriteLine(help.getIntroTxt());
+        }
 
-        internal Cast Cast
+        public String getIntro()
         {
-            get => default(Cast);
-            set
-            {
-            }
+            return help.getIntroTxt();
         }
 
         public void printAllPlayerPositions()
@@ -45,15 +43,7 @@ namespace FoxGooseCorn
             return output.ToString();
         }
 
-        public void printIntro()
-        {
-            WriteLine(help.getIntroTxt());
-        }
-
-        public String getIntro()
-        {
-            return help.getIntroTxt();
-        }
+        
 
         public void printInstructions()
         {
@@ -66,6 +56,16 @@ namespace FoxGooseCorn
             {
                 WriteLine(cast.getCastMemberPosition(player));
             }
+        }
+
+        public string getPlayerPosition(String player)
+        {
+            StringBuilder sb = new StringBuilder();
+            if (cast.isValidCastMember(player))
+            {
+               return cast.getCastMemberPosition(player);
+            }
+            return "";
         }
 
         public void putInBoat(string player)
@@ -83,6 +83,24 @@ namespace FoxGooseCorn
                     WriteLine($"Don't know who {player} is...");
                 }
             }
+        }
+
+        public string loadBoat(string player)
+        {
+            if (cast.isValidCastMember(player))
+            {
+                Actor tempActor = cast.getCastMember(player);
+                if (tempActor != null && tempActor.bank == boat.)
+                {
+                    boat.putInBoat(tempActor);
+                    return $"{player} is in the boat";
+                }
+                else
+                {
+                    return $"Don't know who {player} is...";
+                }
+            }
+            return "";
         }
 
         public void nextTurn()

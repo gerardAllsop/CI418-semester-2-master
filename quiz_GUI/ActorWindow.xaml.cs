@@ -33,6 +33,7 @@ namespace quiz_GUI
                 if (Actor_List.SelectedValue != null)
                 {
                     occupantChosen = Actor_List.SelectionBoxItem.ToString();
+
                     return occupantChosen;
                 }
             }

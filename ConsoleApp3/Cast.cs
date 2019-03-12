@@ -13,14 +13,6 @@ namespace FoxGooseCorn
             new Actor("goose"), new Actor("corn")
         };
 
-        internal Actor Actor
-        {
-            get => default(Actor);
-            set
-            {
-            }
-        }
-
         public string getAllPositions()
         {
             StringBuilder sb = new StringBuilder();
@@ -37,7 +29,7 @@ namespace FoxGooseCorn
         {
             foreach(var role in cast)
             {
-                if(role.Name.Equals(name))
+                if(role.Name.Equals(name, StringComparison.OrdinalIgnoreCase))
                 {
                     return true;
                 }
@@ -48,7 +40,7 @@ namespace FoxGooseCorn
         {
             foreach (var role in cast)
             {
-                if (role.Name.Equals(name))
+                if (role.Name.Equals(name, StringComparison.OrdinalIgnoreCase))
                 {
                     return role.reportPosition();
                 }
