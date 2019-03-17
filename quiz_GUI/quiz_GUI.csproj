@@ -127,5 +127,8 @@
   <ItemGroup>
     <Resource Include="gfx\gja.jpeg" />
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Image1.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
