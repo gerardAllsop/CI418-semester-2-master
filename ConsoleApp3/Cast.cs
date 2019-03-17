@@ -37,7 +37,7 @@ namespace FoxGooseCorn
         {
             foreach(var role in cast)
             {
-                if(role.Name.Equals(name))
+                if(role.Name.Equals(name, StringComparison.InvariantCultureIgnoreCase))
                 {
                     return true;
                 }
@@ -48,7 +48,7 @@ namespace FoxGooseCorn
         {
             foreach (var role in cast)
             {
-                if (role.Name.Equals(name))
+                if (role.Name.Equals(name, StringComparison.InvariantCultureIgnoreCase))
                 {
                     return role.reportPosition();
                 }
@@ -59,7 +59,7 @@ namespace FoxGooseCorn
         {
             foreach (var role in cast)
             {
-                if (role.Name.Equals(name))
+                if (role.Name.Equals(name, StringComparison.InvariantCultureIgnoreCase))
                 {
                     return role;
                 }
@@ -70,7 +70,7 @@ namespace FoxGooseCorn
         {
             foreach (var role in cast)
             {
-                if (role.Name.Equals(name))
+                if (role.Name.Equals(name, StringComparison.InvariantCultureIgnoreCase))
                 {
                     role.changeBank();
                 }
@@ -79,6 +79,22 @@ namespace FoxGooseCorn
         private void swapBank(Actor actor)
         {
             actor.changeBank();
+        }
+
+        public bool rightBankCheck()
+        {
+            Bank farmer = getCastMember("farmer").bank;
+            Bank fox = getCastMember("fox").bank;
+            Bank goose = getCastMember("goose").bank;
+            Bank corn = getCastMember("corn").bank;
+
+            if (fox == Bank.RIGHT   &&
+                goose == Bank.RIGHT &&
+                corn == Bank.RIGHT  &&
+                farmer == Bank.RIGHT)
+                return true;       
+            else
+                return false;
         }
 
         public Boolean everyoneSafe()

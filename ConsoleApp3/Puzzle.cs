@@ -73,16 +73,39 @@ namespace FoxGooseCorn
             if (cast.isValidCastMember(player))
             {
                 Actor tempActor = cast.getCastMember(player);
-                if (tempActor != null)
+                if (tempActor != null && boat.Side == tempActor.bank)
                 {
                     boat.putInBoat(tempActor);
                     WriteLine($"{player} is in the boat");
                 }
                 else
                 {
-                    WriteLine($"Don't know who {player} is...");
+                    WriteLine($"Sorry... the {player} is on the {tempActor.bank} " +
+                        $"bank and the boat is on the {boat.Side} bank");
                 }
             }
+        }
+
+        public bool putInBoat(string player,out string message)
+        {
+            Actor tempActor;
+            if (!cast.isValidCastMember(player))
+            {
+                message = "error";
+            }
+            else
+            {
+                tempActor = cast.getCastMember(player);
+                if (tempActor != null && boat.Side == tempActor.bank)
+                {
+                    boat.putInBoat(tempActor);
+                    message = $"{player} is in the boat";
+                    return true;
+                }
+                message = $"Sorry... the {player} is on the {tempActor.bank} " +
+                           $"bank and the boat is on the {boat.Side} bank";
+            }
+            return false;
         }
 
         public void nextTurn()
@@ -96,6 +119,11 @@ namespace FoxGooseCorn
             boat.crossTheRiver();
             cast.updatePosition("farmer");
             return boat.reportOnPosition();
+        }
+
+        public bool puzzleConcluded()
+        {
+            return cast.rightBankCheck();
         }
 
         public Boolean safetyCheck()

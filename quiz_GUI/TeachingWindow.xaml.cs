@@ -37,11 +37,26 @@ namespace quiz_GUI
             txtOutputBlock.Text = actors.getActor("Who do you want to find?");
         }
         private void Load_Boat_Click(object sender, RoutedEventArgs e){
+            string windowTxt="";
             ActorWindow actors = new ActorWindow();
-            txtOutputBlock.Text = actors.getActor("Who do you want to put in the boat?");
+            string tmpActor = actors.getActor("Who do you want to put in the boat?");
+            puzzle.putInBoat(tmpActor, out windowTxt);
+            txtOutputBlock.Text = windowTxt;
         }
-        private void River_Crossing_Click(object sender, RoutedEventArgs e){     
-            txtOutputBlock.Text = puzzle.crossRiver();
+        private void River_Crossing_Click(object sender, RoutedEventArgs e){       
+            string tmpText = puzzle.crossRiver();
+            if (puzzle.puzzleConcluded())
+            {
+                UserInstruction("Satisfactory conclusion", "Puzzle Alert");
+                this.Close();
+            }
+            else if (puzzle.safetyCheck())
+                txtOutputBlock.Text = tmpText;
+            else
+            {
+                UserInstruction("Unsatisfactory conclusion", "Puzzle Alert");
+                this.Close();
+            }
         }
         private void About_Detail_Click(object sender, RoutedEventArgs e){
             about = new About();
@@ -50,5 +65,17 @@ namespace quiz_GUI
         private void Quit_Click(object sender, RoutedEventArgs e){
             this.Close();
         }
+
+        private MessageBoxResult UserInstruction(string msg, string winCap)
+        {
+            string messageBoxText = msg;
+            string caption = winCap;
+            MessageBoxButton button = MessageBoxButton.OK;
+            MessageBoxImage icon = MessageBoxImage.Information;
+            // Display message box
+            MessageBoxResult result = MessageBox.Show(messageBoxText, caption, button, icon);
+            return result;
+        }
+
     }
 }
