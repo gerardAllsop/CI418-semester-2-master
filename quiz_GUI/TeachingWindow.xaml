@@ -19,22 +19,26 @@
                 <MenuItem Header="_Quit" Click="Quit_Click"/>
             </MenuItem>
         </Menu>
-        <StackPanel >
-            <ScrollViewer  HorizontalScrollBarVisibility="Auto" Height="128" RenderTransformOrigin="0.5,0.5" TextOptions.TextFormattingMode="Display">
-                <ScrollViewer.RenderTransform>
-                    <TransformGroup>
-                        <ScaleTransform/>
-                        <SkewTransform AngleX="-1.299"/>
-                        <RotateTransform/>
-                        <TranslateTransform X="-1.361"/>
-                    </TransformGroup>
-                </ScrollViewer.RenderTransform>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="50" />
+                <RowDefinition Height="150"/>
+                <RowDefinition Height="200"/>
+            </Grid.RowDefinitions>
+            <ScrollViewer  Grid.Row="0" Background="white">
                 <TextBlock Name="txtOutputBlock" 
                            Text="This is the output panel" 
                            Width="342" Height="186" 
                            TextWrapping="WrapWithOverflow" 
                            FontFamily="Sylfaen" FontSize="14"/>
             </ScrollViewer>
-        </StackPanel>
+            <StackPanel Grid.Row="1" Background="Lavender">
+                <Image Source="gfx/river.png" Height="100"/>
+            </StackPanel>
+            <StackPanel Grid.Row="2" Background="white">
+                <Image Source="gfx/boat.png" Height="150" Width="150"/>
+                <Image Source="gfx/fox.png" Height="150" Width="150"/>
+            </StackPanel>
+        </Grid>
     </DockPanel>
 </Window>

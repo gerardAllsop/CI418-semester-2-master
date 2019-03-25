@@ -20,6 +20,7 @@ namespace quiz_GUI
     public partial class ActorWindow : Window
     {
         public string occupantChosen{ get; set; }
+
         public ActorWindow()
         {
             InitializeComponent();

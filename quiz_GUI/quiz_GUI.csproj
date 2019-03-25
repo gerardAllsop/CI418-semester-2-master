@@ -127,5 +127,14 @@
   <ItemGroup>
     <Resource Include="gfx\gja.jpeg" />
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="gfx\river.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="gfx\boat.png" />
+    <Resource Include="gfx\corn.png" />
+    <Resource Include="gfx\fox.png" />
+    <Resource Include="gfx\goose.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
