@@ -42,7 +42,7 @@
             <StackPanel Grid.Row="1" Orientation="Horizontal" Background="DarkBlue">
                 <ScrollViewer  Grid.Row="0" Background="white">
                     <TextBlock Name="txtOutputBlock" 
-                           Text="This is the output panel" 
+                           Text=" The river and the sea are one" 
                            Width="780" Height="50" 
                            TextWrapping="WrapWithOverflow" 
                            FontFamily="Sylfaen" FontSize="24" Foreground="#FFF5F2F2" Background="{DynamicResource {x:Static SystemColors.HotTrackBrushKey}}"/>

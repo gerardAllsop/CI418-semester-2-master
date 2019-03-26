@@ -27,10 +27,10 @@ namespace quiz_GUI
             puzzle = new Puzzle();
         }
         private void Intro_View_Click(object sender, RoutedEventArgs e){
-            txtOutputBlock.Text = puzzle.getIntro();
+            UserInstruction(puzzle.getIntro(), "Puzzle Intro");
         }
         private void Display_Actors_Click(object sender, RoutedEventArgs e){
-            txtOutputBlock.Text = puzzle.getAllPlayerPositions();
+            UserInstruction(puzzle.getAllPlayerPositions(), "Where is Everyone?");
         }
         private void Find_Actor_Click(object sender, RoutedEventArgs e){
             ActorWindow actors = new ActorWindow();
@@ -79,12 +79,6 @@ namespace quiz_GUI
                     getImageRef("left", boatOccupant).Opacity = 1;
                 }
             }
-
-            if (!puzzle.safetyCheck())
-            {
-            
-            }
-            
         }
         private void About_Detail_Click(object sender, RoutedEventArgs e){
             about = new About();
@@ -103,5 +97,17 @@ namespace quiz_GUI
                 return imgNode as Image;
             return null;
         }
+
+        private MessageBoxResult UserInstruction(string msg, string winCap)
+        {
+            string messageBoxText = msg;
+            string caption = winCap;
+            MessageBoxButton button = MessageBoxButton.OK;
+            MessageBoxImage icon = MessageBoxImage.Information;
+            // Display message box
+            MessageBoxResult result = MessageBox.Show(messageBoxText, caption, button, icon);
+            return result;
+        }
+
     }
 }
