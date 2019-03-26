@@ -77,6 +77,11 @@ namespace FoxGooseCorn
             }
         }
 
+        public Bank whereIsBoat()
+        {
+            return boat.Side;
+        }
+
         public void nextTurn()
         {
             boat.crossTheRiver();

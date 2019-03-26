@@ -42,6 +42,16 @@ namespace quiz_GUI
         }
         private void River_Crossing_Click(object sender, RoutedEventArgs e){     
             txtOutputBlock.Text = puzzle.crossRiver();
+            if (puzzle.whereIsBoat() == Bank.RIGHT)
+            {
+                left_boat_img.Visibility = Visibility.Hidden;
+                right_boat_img.Visibility = Visibility.Visible;
+            }
+            else
+            {
+                left_boat_img.Visibility = Visibility.Visible;
+                right_boat_img.Visibility = Visibility.Hidden;
+            }
         }
         private void About_Detail_Click(object sender, RoutedEventArgs e){
             about = new About();

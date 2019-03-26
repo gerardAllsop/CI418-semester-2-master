@@ -21,23 +21,46 @@
         </Menu>
         <Grid>
             <Grid.RowDefinitions>
-                <RowDefinition Height="50" />
+                <RowDefinition Height="150" />
+                <RowDefinition Height="75"/>
                 <RowDefinition Height="150"/>
-                <RowDefinition Height="200"/>
             </Grid.RowDefinitions>
-            <ScrollViewer  Grid.Row="0" Background="white">
-                <TextBlock Name="txtOutputBlock" 
+            <StackPanel Grid.Row="0" Background="white">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto" />
+                        <ColumnDefinition Width="Auto" />
+                        <ColumnDefinition Width="Auto" />
+                        <ColumnDefinition Width="Auto" />
+                    </Grid.ColumnDefinitions>
+                    <Image Name="right_boat_img" Source="gfx/boat.png" Height="98" Grid.Column="0" Visibility="Hidden"/>
+                    <Image Name="right_fox_img" Source="gfx/fox.png" Height="150" Grid.Column="1" Visibility="Hidden"/>
+                    <Image Name="right_goose_img" Source="gfx/goose.png" Height="150" Grid.Column="2" Visibility="Hidden"/>
+                    <Image Name="right_corn_img" Source="gfx/corn.png" Height="150" Grid.Column="3" Visibility="Hidden"/>
+                </Grid>
+            </StackPanel>
+            <StackPanel Grid.Row="1" Orientation="Horizontal" Background="DarkBlue">
+                <ScrollViewer  Grid.Row="0" Background="white">
+                    <TextBlock Name="txtOutputBlock" 
                            Text="This is the output panel" 
-                           Width="342" Height="186" 
+                           Width="780" Height="50" 
                            TextWrapping="WrapWithOverflow" 
-                           FontFamily="Sylfaen" FontSize="14"/>
-            </ScrollViewer>
-            <StackPanel Grid.Row="1" Background="Lavender">
-                <Image Source="gfx/river.png" Height="100"/>
+                           FontFamily="Sylfaen" FontSize="24" Foreground="#FFF5F2F2" Background="{DynamicResource {x:Static SystemColors.HotTrackBrushKey}}"/>
+                </ScrollViewer>
             </StackPanel>
             <StackPanel Grid.Row="2" Background="white">
-                <Image Source="gfx/boat.png" Height="150" Width="150"/>
-                <Image Source="gfx/fox.png" Height="150" Width="150"/>
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto" />
+                        <ColumnDefinition Width="Auto" />
+                        <ColumnDefinition Width="Auto" />
+                        <ColumnDefinition Width="Auto" />
+                    </Grid.ColumnDefinitions>
+                    <Image x:Name="left_boat_img" Source="gfx/boat.png" Height="98" Grid.Column="0"/>
+                    <Image x:Name="left_fox_img" Source="gfx/fox.png" Height="150" Grid.Column="1"/>
+                    <Image x:Name="left_goose_img" Source="gfx/goose.png" Height="150" Grid.Column="2"/>
+                    <Image x:Name="left_corn_img" Source="gfx/corn.png" Height="150" Grid.Column="3" RenderTransformOrigin="1.48,0.497"/>
+                </Grid>
             </StackPanel>
         </Grid>
     </DockPanel>

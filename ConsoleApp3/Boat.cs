@@ -8,7 +8,7 @@ namespace FoxGooseCorn
 {
     class Boat
     {
-        Bank Side { get; set; }
+        public Bank Side { get; private set; }
         Actor occupant;
         public Boat()
         {
