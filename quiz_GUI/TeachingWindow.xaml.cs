@@ -41,7 +41,12 @@ namespace quiz_GUI
             string windowTxt="";
             ActorWindow actors = new ActorWindow();
             string tmpActor = actors.getActor("Who do you want to put in the boat?");
-            puzzle.putInBoat(tmpActor, out windowTxt);
+            if(puzzle.putInBoat(tmpActor, out windowTxt)){
+                //move image of actor to other side of river
+            }
+            else{
+                //keep image of actor on same side of river
+            }
             txtOutputBlock.Text = windowTxt;
         }
         private void River_Crossing_Click(object sender, RoutedEventArgs e){       

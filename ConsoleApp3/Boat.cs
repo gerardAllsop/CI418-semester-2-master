@@ -10,24 +10,22 @@ namespace FoxGooseCorn
     {
         public Bank Side { get; private set; }
         Actor occupant;
-        public Boat()
-        {
+
+        public Boat(){
             Side = Bank.LEFT;
         }
 
-        public Bank crossTheRiver()
-        {
-            if(Side == Bank.LEFT)
-            {
+        public Bank crossTheRiver(){
+            if(Side == Bank.LEFT){
                 Side = Bank.RIGHT;
             }
-            else
-            {
+            else{
                 Side = Bank.LEFT;
             }
             updateBoatOccupantPosition();
             return Side;
         }
+
         private void updateBoatOccupantPosition()
         {
             if (occupant != null)

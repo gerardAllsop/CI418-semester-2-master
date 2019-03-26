@@ -68,6 +68,18 @@ namespace FoxGooseCorn
             }
         }
 
+        public string getPlayerPosition(String player)
+        {
+            if (cast.isValidCastMember(player))
+            {
+                return cast.getCastMemberPosition(player);
+            }
+            return "";
+        }
+
+
+
+
         public void putInBoat(string player)
         {
             if (cast.isValidCastMember(player))
