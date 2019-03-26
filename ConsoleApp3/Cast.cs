@@ -37,7 +37,7 @@ namespace FoxGooseCorn
         {
             foreach(var role in cast)
             {
-                if(role.Name.Equals(name))
+                if(role.Name.Equals(name, StringComparison.InvariantCultureIgnoreCase))
                 {
                     return true;
                 }
@@ -48,7 +48,7 @@ namespace FoxGooseCorn
         {
             foreach (var role in cast)
             {
-                if (role.Name.Equals(name))
+                if (role.Name.Equals(name, StringComparison.InvariantCultureIgnoreCase))
                 {
                     return role.reportPosition();
                 }
@@ -59,7 +59,7 @@ namespace FoxGooseCorn
         {
             foreach (var role in cast)
             {
-                if (role.Name.Equals(name))
+                if (role.Name.Equals(name, StringComparison.InvariantCultureIgnoreCase))
                 {
                     return role;
                 }

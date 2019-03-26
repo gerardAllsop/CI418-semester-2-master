@@ -19,7 +19,7 @@
                 <MenuItem Header="_Quit" Click="Quit_Click"/>
             </MenuItem>
         </Menu>
-        <Grid>
+        <Grid Name="main_grid">
             <Grid.RowDefinitions>
                 <RowDefinition Height="150" />
                 <RowDefinition Height="75"/>

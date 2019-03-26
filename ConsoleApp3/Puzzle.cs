@@ -77,6 +77,31 @@ namespace FoxGooseCorn
             }
         }
 
+        public bool putInBoat(string player, out string message)
+        {
+            if (cast.isValidCastMember(player))
+            {
+                Actor tempActor = cast.getCastMember(player);
+                if (tempActor == null)
+                {
+                    message = $"Don't know who {player} is...";
+                    return false;
+                }
+                else if(tempActor.bank != boat.Side)
+                {
+                    message = $"{player} is on the {tempActor.bank} bank and the boat is on the {boat.Side} bank";
+                    return false;
+                }
+                else{
+                    boat.putInBoat(tempActor);
+                    message = $"{player} is in the boat";
+                    return true;
+                }
+            }
+            message = $"ERROR! no such player <{player}>";
+            return false;
+        }
+
         public Bank whereIsBoat()
         {
             return boat.Side;
@@ -86,6 +111,11 @@ namespace FoxGooseCorn
         {
             boat.crossTheRiver();
             cast.updatePosition("farmer");
+        }
+
+        public string getBoatOccupant()
+        {
+            return boat.getBoatOccupant();
         }
 
         public String crossRiver()

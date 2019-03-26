@@ -14,7 +14,6 @@ namespace FoxGooseCorn
         {
             Side = Bank.LEFT;
         }
-
         internal Bank Bank
         {
             get => default(Bank);
@@ -22,7 +21,6 @@ namespace FoxGooseCorn
             {
             }
         }
-
         public Bank crossTheRiver()
         {
             if(Side == Bank.LEFT)
@@ -48,7 +46,13 @@ namespace FoxGooseCorn
         {
             occupant = actor;
         }
-
+        public string getBoatOccupant()
+        {
+            if (occupant == null)
+                return "empty";
+            else
+                return occupant.Name;
+        }
         public String reportOnPosition()
         {
             return $"The boat is on the {Side} bank";
