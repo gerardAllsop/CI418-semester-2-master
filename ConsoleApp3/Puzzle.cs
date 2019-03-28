@@ -127,7 +127,17 @@ namespace FoxGooseCorn
 
         public Boolean safetyCheck()
         {
-            return cast.everyoneSafe();
+            return cast.EveryoneSafe();
+        }
+
+        public Boolean safetyCheck(out string text)
+        {
+            return cast.EveryoneSafe(out text);
+        }
+
+        public bool puzzleCompleted()
+        {
+            return cast.puzzleCompleted();
         }
     }
 }

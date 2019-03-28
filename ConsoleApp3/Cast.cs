@@ -81,7 +81,7 @@ namespace FoxGooseCorn
             actor.changeBank();
         }
 
-        public Boolean everyoneSafe()
+        public Boolean EveryoneSafe(out string text)
         {
             Bank farmer = getCastMember("farmer").bank;
             Bank fox = getCastMember("fox").bank;
@@ -89,11 +89,51 @@ namespace FoxGooseCorn
             Bank corn = getCastMember("corn").bank;
 
             if (fox == goose && farmer != goose)
+            {
+                text = "Fox says: mmm! Tasty Goose";
+                return false;
+            }            
+            else if (goose == corn && farmer != corn)
+            {
+                text = "Goose says: Time for a corny joke";
+                return false;
+            }
+            else
+            {
+                text = "";
+                return true;
+            }
+                
+        }
+
+        public Boolean EveryoneSafe()
+        {
+            Bank farmer = getCastMember("farmer").bank;
+            Bank fox = getCastMember("fox").bank;
+            Bank goose = getCastMember("goose").bank;
+            Bank corn = getCastMember("corn").bank;
+
+            if (fox == goose && farmer != goose)        
                 return false;
             else if (goose == corn && farmer != corn)
                 return false;
             else
                 return true;
+        }
+
+
+        public Boolean puzzleCompleted()
+        {
+            Bank farmer = getCastMember("farmer").bank;
+            Bank fox = getCastMember("fox").bank;
+            Bank goose = getCastMember("goose").bank;
+            Bank corn = getCastMember("corn").bank;
+
+            if (fox == Bank.RIGHT &&
+                goose == Bank.RIGHT &&
+                corn == Bank.RIGHT)
+                return true;
+            return false;          
         }
     }
 }

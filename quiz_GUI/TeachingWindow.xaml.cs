@@ -40,6 +40,10 @@ namespace quiz_GUI
             string text="";
             ActorWindow actors = new ActorWindow();
             String player = actors.getActor("Who do you want to put in the boat?");
+            //just in case someone already in the boat
+            string alreadyOccupied = puzzle.getBoatOccupant().ToLower();
+            if (!alreadyOccupied.Equals("empty"))
+                getImageRef(puzzle.whereIsBoat().ToString().ToLower(), alreadyOccupied).Opacity = 1;
             if (puzzle.putInBoat(player, out text))
             {
                 Image actorImage = getImageRef(puzzle.whereIsBoat().ToString().ToLower(),player);   
@@ -55,6 +59,7 @@ namespace quiz_GUI
             string boatOccupant = puzzle.getBoatOccupant().ToLower();
             bool boatHasOccupant = !boatOccupant.Equals("empty");
             txtOutputBlock.Text = puzzle.crossRiver();
+            string txtForMessageBox="";
             
             if (puzzle.whereIsBoat() == Bank.RIGHT)
             {
@@ -78,6 +83,19 @@ namespace quiz_GUI
                     getImageRef("left", boatOccupant).Visibility = Visibility.Visible;
                     getImageRef("left", boatOccupant).Opacity = 1;
                 }
+            }
+            
+            if (!puzzle.safetyCheck(out txtForMessageBox))
+            {
+                UserInstruction(txtForMessageBox, "Problem");
+                this.Close();
+            }
+            else if(puzzle.puzzleCompleted())
+            {
+                UserInstruction("Congratulations\nYou have managed to get\n" +
+                    "The Fox, Goose and Corn" +
+                    "To cross the river", "Puzzle Over");
+                this.Close();
             }
         }
         private void About_Detail_Click(object sender, RoutedEventArgs e){
